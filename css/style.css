@@ -104,6 +104,7 @@ a {
 
 .section {
   min-height: 60vh;
+  margin: 40px;
 }
 
 #services-section {
@@ -118,13 +119,17 @@ a {
   margin: 2%;
   background-color: white;
   border-radius: 10px;
-  min-height: 40vh;
+  height: 60vh;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: 0.5s;
 }
 
 .service-card:hover {
   transform: scale(1.01);
+}
+
+.service-card p {
+  padding: 20px;
 }
 
 .service-card-header-wrapper {
@@ -144,4 +149,47 @@ a {
   background-color: black;
   padding: 15px;
   font-size: 20px;
+}
+
+#about-section {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../media/img/Background.jpg");
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.about-image-wrapper,
+.about-text-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about-section img {
+  width: 50vh;
+  height: 50vh;
+  object-fit: cover;
+  border: 5px solid red;
+  border-radius: 50%;
+  padding-left: 5px;
+}
+
+.about-text-wrapper {
+  padding-right: 25%;
+  color: white;
+}
+
+.about-text-wrapper h2 {
+  border-bottom: 2px solid red;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+
+.about-text-wrapper p {
+  line-height: 25px;
 }
