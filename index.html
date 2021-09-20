@@ -78,16 +78,20 @@
         </div>
     </section>
     <section id="social-section" class="section">
-        <h2>Share stuff with us!</h2>
+        <h2><span>S</span>hare <span>S</span>tuff <span>W</span>ith Us<span>!</span></h2>
         <div class="social-icons-wrapper">
             <i class="fa fa-twitter" aria-hidden="true"></i>
             <i class="fa fa-linkedin" aria-hidden="true"></i>
             <i class="fa fa-github"></i>
         </div>
     </section>
-    <footer class="section">
-        <section id="contact-section">
-            <h2>Contact info</h2>
+    <footer id="contact-section">
+            <form onsubmit="sendFormInfo()">
+                <input id="something" type="text" placeholder="Email" required />
+                <input type="text" placeholder="Subject" required/>
+                <textarea placeholder="Write your message here!" required></textarea>
+                <button type="submit">Swooooosh!</button>
+            </form>
             <div class="contact-info-wrapper">
                 <a href="mailto:christian.johannesson@drakryggen.com">Mail us!</a>
                 <a href="tel:+46703321481">Phone us!</a>
@@ -98,13 +102,6 @@
                     <p>Gothenburg</p>
                 </div>
             </div>
-            <form onsubmit="sendFormInfo()">
-                <input id="something" type="text" placeholder="Email" required />
-                <input type="text" placeholder="Subject" required/>
-                <textarea placeholder="Write your message here!" required></textarea>
-                <button type="submit">Swooooosh!</button>
-            </form>
-        </section>
     </footer>
     <script src="./scripts/app.js">
     </script>
