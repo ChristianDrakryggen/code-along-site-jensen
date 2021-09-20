@@ -79,6 +79,36 @@ span {
   .link-wrapper {
     display: none;
   }
+  .menu-btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+  }
+  .menu-btn-burger {
+    width: 40px;
+    height: 4px;
+    background-color: black;
+  }
+  .menu-btn-burger::before,
+  .menu-btn-burger::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: black;
+  }
+
+  .menu-btn-burger::before {
+    transform: translateY(-10px);
+  }
+
+  .menu-btn-burger::after {
+    transform: translateY(10px);
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -132,6 +162,19 @@ span {
 .hero-image-overlay a:hover {
   background-color: white;
   color: black;
+  animation-name: shake;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-5deg);
+  }
 }
 
 .section {
@@ -309,4 +352,28 @@ footer {
 #contact-section form button:hover {
   background-color: black;
   color: white;
+}
+
+.contact-info-wrapper {
+  margin: 40px 0px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: flex-start;
+}
+
+.contact-info-wrapper p,
+.contact-info-wrapper a,
+.contact-info-wrapper i {
+  color: white;
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.contact-info-wrapper a {
+  margin-left: 10px;
+}
+
+.contact-info-wrapper a:hover {
+  margin-left: 20px;
 }
