@@ -29,7 +29,21 @@ a {
 }
 
 .header h1 {
+  margin-left: -1000px;
   transition: 0.5s;
+  animation-name: slideIn;
+  animation-duration: 1s;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  from {
+    margin-left: -1000px;
+  }
+  to {
+    margin-left: 0;
+  }
 }
 
 .header h1:hover {
@@ -54,6 +68,20 @@ a {
 
 .link-wrapper a:hover {
   color: red;
+}
+
+@media screen and (max-width: 800px) {
+  .full-logo,
+  .link-wrapper {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .mobile-logo,
+  .mobile-menu {
+    display: none;
+  }
 }
 
 #hero-section {
@@ -192,4 +220,7 @@ a {
 
 .about-text-wrapper p {
   line-height: 25px;
+}
+
+#social-section {
 }
