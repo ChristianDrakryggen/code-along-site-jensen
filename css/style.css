@@ -79,6 +79,11 @@ span {
   .link-wrapper {
     display: none;
   }
+  .header {
+    padding-right: 10px;
+    padding-left: 20px;
+    padding-left: 5;
+  }
   .menu-btn {
     position: relative;
     display: flex;
@@ -92,6 +97,7 @@ span {
     width: 40px;
     height: 4px;
     background-color: black;
+    transition: 0.5s;
   }
   .menu-btn-burger::before,
   .menu-btn-burger::after {
@@ -100,6 +106,7 @@ span {
     width: 40px;
     height: 4px;
     background-color: black;
+    transition: 0.5s;
   }
 
   .menu-btn-burger::before {
@@ -108,6 +115,16 @@ span {
 
   .menu-btn-burger::after {
     transform: translateY(10px);
+  }
+  .menu-btn.open .menu-btn-burger {
+    transform: rotate(180deg);
+    background-color: transparent;
+  }
+  .menu-btn.open .menu-btn-burger::before {
+    transform: rotate(45deg);
+  }
+  .menu-btn.open .menu-btn-burger::after {
+    transform: rotate(-45deg);
   }
   .mobile-menu {
     height: calc(100vh - 80px);
@@ -136,6 +153,7 @@ span {
 
 @media screen and (min-width: 800px) {
   .mobile-logo,
+  .menu-btn,
   .mobile-menu {
     display: none;
   }
@@ -170,6 +188,7 @@ span {
 .hero-image-overlay h1 {
   color: white;
   font-size: 30px;
+  text-align: center;
 }
 
 .hero-image-overlay a {
@@ -188,15 +207,17 @@ span {
   animation-name: shake;
   animation-duration: 1s;
   animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 @keyframes shake {
   0% {
     transform: rotate(5deg);
   }
-  100% {
+  50% {
     transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
   }
 }
 
@@ -220,7 +241,6 @@ span {
   height: 40vh;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: 0.5s;
-  overflow: auto;
 }
 
 @media screen and (max-width: 800px) {
@@ -236,6 +256,8 @@ span {
 
 .service-card p {
   padding: 20px;
+  height: 20vh;
+  overflow: auto;
 }
 
 .service-card-header-wrapper {
