@@ -109,6 +109,29 @@ span {
   .menu-btn-burger::after {
     transform: translateY(10px);
   }
+  .mobile-menu {
+    height: calc(100vh - 80px);
+    width: 100%;
+    background-color: red;
+    position: fixed;
+    right: -100%;
+    margin-top: 80px;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  .mobile-link-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .mobile-link {
+    margin: 10px;
+    font-size: 25px;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -194,9 +217,17 @@ span {
   margin: 2%;
   background-color: white;
   border-radius: 10px;
-  height: 60vh;
+  height: 40vh;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: 0.5s;
+  overflow: auto;
+}
+
+@media screen and (max-width: 800px) {
+  .service-card {
+    min-height: 40px;
+    height: unset;
+  }
 }
 
 .service-card:hover {
@@ -267,6 +298,25 @@ span {
 
 .about-text-wrapper p {
   line-height: 25px;
+}
+
+@media screen and (max-width: 800px) {
+  #about-section {
+    grid-template-columns: 100%;
+  }
+  #about-section img {
+    width: 30vh;
+    height: 30vh;
+    margin-top: 40px;
+  }
+  .about-text-wrapper {
+    padding: 0 40px;
+    text-align: justify;
+    margin-bottom: 40px;
+  }
+  .about-text-wrapper h2 {
+    text-align: center;
+  }
 }
 
 #social-section {
