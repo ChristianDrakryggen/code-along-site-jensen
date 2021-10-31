@@ -26,11 +26,9 @@ window.addEventListener("load", function () {
   menuBtn.addEventListener("click", function () {
     toggleMenu();
   });
-  for (let i = 0; links.length; i++) {
+  for (let i = 0; i < links.length; i++) {
     links[i].addEventListener("click", function () {
       toggleMenu();
     });
   }
 });
-
-console.log("wooohoooo");
