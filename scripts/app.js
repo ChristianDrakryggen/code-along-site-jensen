@@ -32,3 +32,11 @@ window.addEventListener("load", function () {
     });
   }
 });
+
+//Service-modal-code
+const services = [
+  { name: "Frontend development", content: "woooHoooo" },
+  { name: "Backend development", content: "woooHoooo2" },
+  { name: "UX design", content: "woooHoooo3" },
+  { name: "Coaching", content: "woooHoooo4" },
+];
