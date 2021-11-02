@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <div id="service-modal-wrapper">
+        <div class="service-modal">
+            <div class="modal-header">
+                <span onclick="closeServiceModal()"><i class="fa fa-times"></i></span>
+            </div>
+            <div id="service-modal-content">
+                
+            </div>
+        </div>
+    </div>
     <header class="header">
         <a class="full-logo" href="#hero-section"><h1><span>C</span>hristian's <span>P</span>ortfolio</h1></a>
         <a class="mobile-logo" href="#hero-section"><h1><span>Cs</span>P</h1></a>
@@ -91,6 +101,16 @@
             <i class="fa fa-linkedin" aria-hidden="true"></i>
             <i class="fa fa-github"></i>
         </div>
+    </section>
+    <section id="images-section">
+       <main class="main-image-wrapper">
+            <img id="main-image" src="">
+            <span id="prev-btn"><i class="fa fa-chevron-left"></i></span>
+            <span id="next-btn"><i class="fa fa-chevron-right"></i></span>
+       </main>
+       <div id="thumbnails-wrapper">
+
+       </div>
     </section>
     <footer id="contact-section">
             <form onsubmit="sendFormInfo()">

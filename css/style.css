@@ -449,3 +449,104 @@ footer {
 .contact-info-wrapper a:hover {
   margin-left: 20px;
 }
+
+#service-modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-modal {
+  width: 50%;
+  height: 50vh;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.modal-header {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-header span {
+  cursor: pointer;
+}
+
+#service-modal-content {
+  padding: 10px;
+}
+
+#service-modal-content img {
+  width: 100%;
+  height: 20vh;
+  object-fit: cover;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#thumbnails-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: auto;
+  background-color: #acacac;
+}
+
+#main-image {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  border-bottom: 1px solid black;
+}
+
+.main-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+}
+
+#prev-btn,
+#next-btn {
+  position: absolute;
+  top: 40%;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+  background-color: red;
+  color: white;
+}
+
+#prev-btn {
+  left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#next-btn {
+  right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
