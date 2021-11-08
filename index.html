@@ -102,9 +102,24 @@
             <i class="fa fa-github"></i>
         </div>
     </section>
+    <div id="image-lightbox">
+        <div class="lb-images-wrapper">
+            <div class="lb-header">
+                <span onclick="closeLightBox()"><i class="fa fa-times"></i></span>
+            </div>
+            <div class="lb-main-image-wrapper">
+                <img id="lb-main-image" src="">
+                <span id="lb-prev-btn" onclick="prevLbImage()"><i class="fa fa-chevron-left"></i></span>
+                <span id="lb-next-btn" onclick="nextLbImage()"><i class="fa fa-chevron-right"></i></span>
+            </div>
+            <div id="lb-thumbnails-wrapper">
+
+            </div>
+        </div>
+    </div>
     <section id="images-section">
        <main class="main-image-wrapper">
-            <img id="main-image" src="">
+            <img id="main-image" onclick="openLightBox(this.src)" src="">
             <span id="prev-btn"><i class="fa fa-chevron-left"></i></span>
             <span id="next-btn"><i class="fa fa-chevron-right"></i></span>
        </main>

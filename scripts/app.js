@@ -163,3 +163,42 @@ window.addEventListener("load", () => {
   document.getElementById("prev-btn").addEventListener("click", prevImage);
   document.getElementById("next-btn").addEventListener("click", nextImage);
 });
+
+//Ligtbox code
+
+const openLightBox = (src) => {
+  document.getElementById("lb-thumbnails-wrapper").innerHTML = images
+    .map(
+      (img) =>
+        `<img src="./media/img/${img.name}" class="lb-thumbnail" onclick="setMainLbImage(this.src)">`
+    )
+    .join("");
+  document.getElementById("image-lightbox").style.display = "flex";
+  setMainLbImage(src);
+};
+
+const closeLightBox = () => {
+  document.getElementById("image-lightbox").style.display = "none";
+};
+
+const setMainLbImage = (tjohoppsan) => {
+  console.log(tjohoppsan);
+  document.getElementById("lb-main-image").setAttribute("src", tjohoppsan);
+  setActiveLbThumbnail();
+};
+
+//function that shows the active thumbnail, by comparing the
+//thumbnails src attribute to the main image's src attribute and
+//if it's the same sets a red border on the tumbnail
+const setActiveLbThumbnail = () => {
+  const lbThumbs = document.querySelectorAll(".lb-thumbnail");
+  console.log("thumbnail elements: ", lbThumbs);
+  lbThumbs.forEach((thumbnail) => {
+    console.log("thumbnail: ", thumbnail);
+    if (thumbnail.src === document.getElementById("lb-main-image").src) {
+      thumbnail.style.border = "2px solid red";
+    } else {
+      thumbnail.style.border = "0px";
+    }
+  });
+};

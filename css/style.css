@@ -494,7 +494,8 @@ footer {
   object-fit: cover;
 }
 
-.thumbnail {
+.thumbnail,
+.lb-thumbnail {
   width: 50px;
   height: 50px;
   object-fit: cover;
@@ -515,6 +516,7 @@ footer {
   height: 60vh;
   object-fit: cover;
   border-bottom: 1px solid black;
+  cursor: pointer;
 }
 
 .main-image-wrapper {
@@ -524,7 +526,9 @@ footer {
 }
 
 #prev-btn,
-#next-btn {
+#next-btn,
+#lb-prev-btn,
+#lb-next-btn {
   position: absolute;
   top: 40%;
   background-color: white;
@@ -534,19 +538,64 @@ footer {
 }
 
 #prev-btn:hover,
-#next-btn:hover {
+#next-btn:hover,
+#lb-prev-btn:hover,
+#lb-next-btn:hover {
   background-color: red;
   color: white;
 }
 
-#prev-btn {
+#prev-btn,
+#lb-prev-btn {
   left: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-#next-btn {
+#next-btn,
+#lb-next-btn {
   right: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+#image-lightbox {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 3;
+}
+
+.lb-images-wrapper {
+  width: 90%;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.lb-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.lb-header span i {
+  cursor: pointer;
+  font-size: 30px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+#lb-main-image {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  border-bottom: 1px solid white;
+  display: block;
 }
