@@ -202,3 +202,52 @@ const setActiveLbThumbnail = () => {
     }
   });
 };
+
+const prevLbImage = () => {
+  const thumbsList = document.querySelectorAll(".lb-thumbnail");
+  //let wasZero = false;
+  for (let i = 0; i < thumbsList.length; i++) {
+    if (
+      thumbsList[i].src === document.querySelector("#lb-main-image").src &&
+      i !== 0 //&&
+      //wasZero === false
+    ) {
+      document
+        .querySelector("#lb-main-image")
+        .setAttribute("src", thumbsList[(i -= 1)].src);
+      setActiveLbThumbnail();
+    } else if (
+      thumbsList[i].src === document.querySelector("#lb-main-image").src &&
+      i === 0
+    ) {
+      document
+        .querySelector("#lb-main-image")
+        .setAttribute("src", thumbsList[(i += thumbsList.length - 1)].src);
+      setActiveLbThumbnail();
+      //wasZero = true;
+    }
+  }
+};
+
+const nextLbImage = () => {
+  const thumbsList = document.querySelectorAll(".lb-thumbnail");
+  for (let i = 0; i < thumbsList.length; i++) {
+    if (
+      thumbsList[i].src === document.querySelector("#lb-main-image").src &&
+      i !== thumbsList.length - 1
+    ) {
+      document
+        .querySelector("#lb-main-image")
+        .setAttribute("src", thumbsList[(i += 1)].src);
+      setActiveLbThumbnail();
+    } else if (
+      thumbsList[i].src === document.querySelector("#lb-main-image").src &&
+      i === thumbsList.length - 1
+    ) {
+      document
+        .querySelector("#lb-main-image")
+        .setAttribute("src", thumbsList[0].src);
+      setActiveLbThumbnail();
+    }
+  }
+};
