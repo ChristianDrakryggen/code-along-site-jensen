@@ -128,10 +128,13 @@
        </div>
     </section>
     <footer id="contact-section">
-            <form onsubmit="sendFormInfo()">
-                <input id="something" type="text" placeholder="Email" required />
-                <input type="text" placeholder="Subject" required/>
-                <textarea placeholder="Write your message here!" required></textarea>
+            <div id="message-confirmation">
+                <span class="loader"></span>
+            </div>
+            <form onsubmit="sendFormInfo(); return false;">
+                <input id="email" type="email" placeholder="Email" required />
+                <input id="subject" type="text" placeholder="Subject" required/>
+                <textarea id="message" placeholder="Write your message here!" required></textarea>
                 <button type="submit">Swooooosh!</button>
             </form>
             <div class="contact-info-wrapper">

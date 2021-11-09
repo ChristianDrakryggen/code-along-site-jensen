@@ -5,8 +5,35 @@ const links = document.getElementsByClassName("mobile-link");
 const documentBody = document.body;
 
 function sendFormInfo() {
-  alert("Your message has been sent!");
+  try {
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+    console.log(`Email: ${email}, Subject: ${subject}, Message: ${message}`);
+    document.getElementById("message-confirmation").style.display = "flex";
+    setTimeout(() => {
+      document.getElementById("message-confirmation").innerHTML =
+        '<h2>Thank you for your message</h2><button onclick="closeMessageConfirmation()">Close</button>';
+    }, 2000);
+  } catch (error) {
+    document.getElementById("message-confirmation").style.display = "flex";
+    document.getElementById("message-confirmation").innerHTML =
+      '<h2>An error occured!</h2><button onclick="closeMessageConfirmation()">Close</button>';
+  }
 }
+
+/*const openMessageConfirmation = () => {
+  messageConfirmation.style.display = "flex";
+};*/
+
+const closeMessageConfirmation = () => {
+  document.getElementById("message-confirmation").style.display = "none";
+  document.getElementById("message-confirmation").innerHTML =
+    '<span class="loader"></span>';
+  document.getElementById("email").value = "";
+  document.getElementById("subject").value = "";
+  document.getElementById("message").value = "";
+};
 
 function toggleMenu() {
   if (!menuOpen) {
